@@ -1,0 +1,17 @@
+class Solution:
+  def isValid(self, s:str) -> bool:
+    valid = {'(':')', '{':'}', '[':']'}
+    stack = []
+    for chat in s:
+      if char in valid:
+        stack.append(char)
+      elif stack:
+        if valid[stack.pop()] != char:
+          return False
+      else:
+        return False
+    return stack == []
+  
+# Test Cases and driver code
+if __name__ == 'main':
+  
